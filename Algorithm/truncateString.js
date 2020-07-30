@@ -9,6 +9,7 @@ function truncateString(str, num) {
 		for (let i = 0; i < str.length; i++) {
 			index.push(str[i])
 		}
+		// you can also use slice
 		let newWord = [index.splice(0, num).join(""), "..."]
 		return newWord.join("")
 	} else {
