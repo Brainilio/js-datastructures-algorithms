@@ -3,7 +3,14 @@ Return the lowest index at which a value (second argument) should be inserted in
 */
 
 function getIndexToIns(arr, num) {
+	//sort array
+	arr.sort(function (a, b) {
+		return a - b
+	})
+
+	//empty array
 	let indexArr = []
+
 	for (let i = 0; i < arr.length; i++) {
 		//check if num is bigger than the value in arr
 		if (num > arr[i]) {
