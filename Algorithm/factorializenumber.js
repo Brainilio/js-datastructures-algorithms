@@ -1,7 +1,6 @@
-// Factioralize
+// Factioralize a number in a function
 
 //Recursion
-
 function factorialize(num) {
 	if (num === 0) {
 		return 1
@@ -10,8 +9,6 @@ function factorialize(num) {
 	}
 }
 
-console.log(factorialize(5))
-
 // For loop
 function factorialize(num) {
 	for (var product = 1; num > 0; num--) {
@@ -19,5 +16,3 @@ function factorialize(num) {
 	}
 	return product
 }
-
-factorialize(5)
