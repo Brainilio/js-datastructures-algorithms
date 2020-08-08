@@ -16,7 +16,11 @@ function addUpTo(n) {
 If N is 5, there are 5 operations, if N is 100, tehre are 100 operations.
 There are N additions, N assignments, N comparisons happening in the for-loop alone.
 There are so many operations happening. 
+*/
 
+/* BIG O:  
+Number of operations is bounded by a multiple of n => so 5 operations for 1 N 
+but it would be 5 x 2 = 10 operations for 2N etc so O(N)
 */
 
 //second solution:
@@ -26,6 +30,10 @@ function addUpToTwo(n) {
 /* COUNTING OPERATIONS: 
 1. MULTIPLICATION, ADDITION, DIVISONS: 
 it doesn't even matter what n is, there are only 3 calculations happening 
+*/
+
+/* BIG O:  
+As N grows, the operatiosn don't grow so this is O(1)
 */
 
 //check performance:
