@@ -1,0 +1,79 @@
+Determine the time complexity for the following function 
+
+    function logUpTo(n) {
+        for (var i = 1; i <= n; i++) {
+            console.log(i);
+        }
+    }
+
+The loop grows based on N so O(N)
+
+
+Determine the time complexity for the following function 
+
+    function logAtMost10(n) {
+        for (var i = 1; i <= Math.min(n, 10); i++) {
+            console.log(i);
+        }
+    }
+
+It goes to a maximum of N, but if 10 stays underneath N, it stays constant
+so it doesn't grow larger than 10 potentially so O(1)
+
+
+Determine the time complexity for the following function
+
+    function logAtLeast10(n) {
+        for (var i = 1; i <= Math.max(n, 10); i++) {
+            console.log(i);
+        }
+    }
+
+Loops from 1 to N at least or else 10. If N is larger or even below 10, it goes
+up to N, no matter what, it only gives 10 if N is lower than 10 so O(N)
+
+
+Determine the time complexity for the following function
+
+    function onlyElementsAtEvenIndex(array) {
+        var newArray = Array(Math.ceil(array.length / 2));
+        for (var i = 0; i < array.length; i++) {
+            if (i % 2 === 0) {
+                newArray[i / 2] = array[i];
+            }
+        }
+        return newArray;
+    }
+
+newArray gets assigned an array = o(1)
+loop = o(n) 
+what happens in the loop is assigning the newarray[i/2] to array[i] and thats 
+constant o(1)
+but it grows based on the N from the loop so O(N) is the most important factor
+O(1 + N + 1) = (2 + N) = O(N) (idk if this is correct, could be more 
+operations but that doesnt matter in this case)
+
+
+Question 5:
+
+Determine the time complexity for the following function
+
+    function subtotals(array) {
+        var subtotalArray = Array(array.length);
+        for (var i = 0; i < array.length; i++) {
+            var subtotal = 0;
+            for (var j = 0; j <= i; j++) {
+                subtotal += array[j];
+            }
+            subtotalArray[i] = subtotal;
+        }
+        return subtotalArray;
+    }
+
+assignation = 1
+loop = o(n) 
+assignation = 1 
+inner loop o(n) 
+arithmetic operation = 1 
+assignation 1 
+2 inner loops is what matters here the most so o(n^2)
