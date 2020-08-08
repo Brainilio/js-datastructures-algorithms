@@ -12,11 +12,21 @@ function addUpTo(n) {
 	}
 	return total
 }
+/* COUNTING OPERATIONS
+If N is 5, there are 5 operations, if N is 100, tehre are 100 operations.
+There are N additions, N assignments, N comparisons happening in the for-loop alone.
+There are so many operations happening. 
+
+*/
 
 //second solution:
 function addUpToTwo(n) {
 	return (n * (n + 1)) / 2
 }
+/* COUNTING OPERATIONS: 
+1. MULTIPLICATION, ADDITION, DIVISONS: 
+it doesn't even matter what n is, there are only 3 calculations happening 
+*/
 
 //check performance:
 let t1 = performance.now() //tells me the number of ms since document is created
