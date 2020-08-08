@@ -11,7 +11,7 @@ function countUpAndDown(n) {
 	console.log("Back down. Bye")
 }
 
-/* 
+/* BIG O: 
 2 for loops, as n grows, the loop grows so: O(N)
 same goes for the second one so also O(N)
 This will be a linear graph, so the bigger the N, the longer it takes to run
