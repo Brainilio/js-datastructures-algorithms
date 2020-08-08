@@ -1,0 +1,10 @@
+O(N + 10) = O(N), the 10 doesn't matter too much, since N keeps growing.
+
+O(100 * N), N keeps growing based on the 100 calculations no matter how big N is, so O(N)
+
+O(25) => O(1), number of calculations doesn't grow based on N
+
+O(N^2 + N^3), N^3 calculations grow significantly bigger than O(N^2) so O(N^2)
+
+O(n + n + n + n) = O(4n) = O(n) 
+
