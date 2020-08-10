@@ -1,3 +1,9 @@
+
+!!!! THESE ARE JUST QUIZES THAT I ANSWERED WITH MY EXPLANATION, 
+MY EXPLANATION MAY BE WRONG! SO IF YOU'RE READING THIS, THESE MAY NOT BE 
+THE CORRECT EXPLANATIONS, HOWEVER THE ANSWERS ARE STILL CORRECT !!!!!!
+
+
 O(N + 10) = O(N), the 10 doesn't matter too much, since N keeps growing.
 
 O(100 * N), N keeps growing based on the 100 calculations no matter how big N is, so O(N)
