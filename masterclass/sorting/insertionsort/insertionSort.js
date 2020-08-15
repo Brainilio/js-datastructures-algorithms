@@ -21,3 +21,41 @@ function insertionSort(arr) {
 
 	return arr
 }
+
+//other solution
+function arraymove(arr, fromIndex, toIndex) {
+	var element = arr[fromIndex]
+	arr.splice(fromIndex, 1)
+	arr.splice(toIndex, 0, element)
+}
+
+function sort(arr) {
+	for (let i = 1; i < arr.length; i++) {
+		let newIndex = i
+		for (let j = i - 1; j >= 0; j--) {
+			if (arr[j] > arr[i]) newIndex = j
+			else break
+		}
+		if (i !== newIndex) arraymove(arr, i, newIndex)
+	}
+	return arr
+}
+
+//another
+function insertionSort(arr) {
+	for (let i = 0; i < arr.length; i++) {
+		const currentValue = arr[i]
+		let swapableIndex = i
+		for (let j = i - 1; j >= 0; j--) {
+			if (arr[j] > currentValue) {
+				arr[j + 1] = arr[j]
+				swapableIndex = j
+				continue
+			} else {
+				break
+			}
+		}
+		arr[swapableIndex] = currentValue
+	}
+	return arr
+}
