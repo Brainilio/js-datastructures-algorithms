@@ -26,9 +26,11 @@ function whatIsInAName(collection, source) {
 	// By any other name would smell as sweet.”
 	// -- by William Shakespeare, Romeo and Juliet
 	var srcKeys = Object.keys(source)
+	console.log(srcKeys)
 
 	// filter the collection
-	return collection.filter(function (obj) {
+	return collection.filter((obj) => {
+		console.log(obj)
 		for (var i = 0; i < srcKeys.length; i++) {
 			if (
 				!obj.hasOwnProperty(srcKeys[i]) ||
@@ -41,7 +43,9 @@ function whatIsInAName(collection, source) {
 	})
 }
 
-whatIsInAName(
-	[{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
-	{ apple: 1, bat: 2 }
+console.log(
+	whatIsInAName(
+		[{ apple: 1, bat: 2 }, { bat: 2 }, { apple: 1, bat: 2, cookie: 2 }],
+		{ apple: 1, bat: 2 }
+	)
 )
