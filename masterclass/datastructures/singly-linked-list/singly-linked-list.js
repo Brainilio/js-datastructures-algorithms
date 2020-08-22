@@ -44,7 +44,31 @@ class SinglyLinkedList {
 		}
 	}
 
-	pop() {}
+	pop() {
+		// no nodes int he list? return undefined
+		// loop through list until you reach the tail
+		// set the next property oft he 2nd to last node to be null
+		// set the tail to be the 2nd to last node
+		// decrement length of the list by 1
+		//return valuie of the node removed
+		if (!this.head) return undefined
+		let current = this.head
+		let newTail = current
+
+		//while you can still do current.next
+		while (current.next) {
+			newTail = current
+			current = current.next
+		}
+		this.tail = newTail
+		this.tail.next = null
+		this.length--
+		if (this.length === 0) {
+			this.head = null
+			this.tail = null
+		}
+		return current
+	}
 }
 
 //base list
