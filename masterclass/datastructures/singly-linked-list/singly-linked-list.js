@@ -31,7 +31,7 @@ class SinglyLinkedList {
 			this.tail.next = newNode
 			this.tail = newNode
 		}
-		//increase length with +1
+		// increase length with +1
 		thislength += 1
 		return this
 	}
@@ -50,14 +50,14 @@ class SinglyLinkedList {
 		// set the next property oft he 2nd to last node to be null
 		// set the tail to be the 2nd to last node
 		// decrement length of the list by 1
-		//return valuie of the node removed
+		// return valuie of the node removed
 		if (!this.head) {
 			return undefined
 		}
 		let current = this.head
 		let newTail = current
 
-		//while you can still do current.next
+		// while you can still do current.next
 		while (current.next) {
 			newTail = current
 			current = current.next
@@ -74,11 +74,13 @@ class SinglyLinkedList {
 
 	shift() {
 		// no nodes return undefined
-		//store current ehad property in a vafriable
+		// store current ehad property in a vafriable
 		// set head property to be the current heads next property
 		// decrement the length
-		//return the value of the node removed
+		// return the value of the node removed
 		if (this.length === 0) {
+			this.tail = null
+			this.head = null
 			return undefined
 		}
 		let shiftedHead = this.head
@@ -86,6 +88,45 @@ class SinglyLinkedList {
 		this.length--
 		return currentHead
 	}
+
+	unshift(val) {
+		//accepts value
+		// create new node using the value passed to the function
+		// no head?,. set head and tail to new node
+		// else new node.next = current head
+		// new node is head
+		//increment length of teh list by 1
+		//return linked list
+
+		let newVal = new Node(val)
+		if (!this.head) {
+			this.head = newVal
+			this.tail = newVal
+		} else {
+			newVal.next = this.head
+			this.head = newVal
+		}
+		this.length++
+		return this
+	}
+	get(index) {
+		//get index
+		//if index <= zero || >= length return null
+		//loop throguh list until you reach the index and retunr the node at that specific index
+		if (index < 0 || index >= this.length) return null
+		let current = this.head
+		let counter = 0
+
+		while (counter !== index) {
+			current = current.next
+			counter++
+		}
+		return current
+	}
+	set() {}
+	insert() {}
+	remove() {}
+	reverse() {}
 }
 
 //base list
