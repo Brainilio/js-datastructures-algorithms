@@ -14,6 +14,7 @@ class SinglyLinkedList {
 		this.tail = 0
 		this.length = 0
 	}
+
 	push(val) {
 		//grab current tail to have val as value now
 		//create new node using the value passed to the function
@@ -22,22 +23,27 @@ class SinglyLinkedList {
 		//increment length by one
 		let newNode = new Node(val)
 		if (this.head) {
+			//if this is the first ever node to the list, add it to tail and head.
 			this.head = newNode
 			this.tail = newNode
 		} else {
+			//make the tail the node that you want to push onto it. (next) also gives the new node
 			this.tail.next = newNode
 			this.tail = newNode
 		}
+		//increase length with +1
 		thislength += 1
 		return this
 	}
+
 	traverse() {
+		//this head is the node that you add to it (so New Node(val))
 		let current = this.head
 		while (current) {
-			console.log(current.val)
 			current = current.next
 		}
 	}
+
 	pop() {}
 }
 
