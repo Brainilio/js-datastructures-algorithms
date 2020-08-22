@@ -147,10 +147,10 @@ class SinglyLinkedList {
 			return false
 		}
 		if (index === this.length) {
-			return this.push(val)
+			return !!this.push(val)
 		}
 		if (index === 0) {
-			return this.unshift(val)
+			return !!this.unshift(val)
 		} else {
 			let newNode = new Node(val)
 			let preIndexVal = this.get(index - 1)
