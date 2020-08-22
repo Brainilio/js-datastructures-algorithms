@@ -161,11 +161,58 @@ class SinglyLinkedList {
 			return true
 		}
 	}
-	remove() {}
-	reverse() {}
+	remove(index) {
+		// removing node from linkedlist at a specific position
+		// index < zero || > length return undefined
+		// index === length - 1 ? .pop
+		// index === 0, .shift
+		// .get(index - 1), .next = .next.next
+		// length--
+		// return node.val removed
+		if (index < 0 || index >= this.length) return undefined
+		if (index === length - 1) return this.pop()
+		if (index === 0) return this.shift()
+		else {
+			let prevNode = this.get(index - 1)
+			let removed = prevNode.next
+			prevNode.next = removed.next
+			this.length--
+			return removed
+		}
+	}
+	reverse() {
+		//swap head and tail
+		//create variable called next
+		//create variable called prev
+		//create variable called node =  new Node(this.head)
+		//loop through list
+		//next = next prop on node.
+		//next property on node is prev;
+		//node variable = value of next VARIABLE
+		let node = new Node(head)
+		this.head = this.tail
+		this.tail = node
+		let next
+		let prev = null
+		for (var i = 0; i < this.length; i++) {
+			next = node.next
+			node.next = prev
+			prev = node
+			node = next
+		}
+		return this
+	}
+	//print all values in arr;
+	print() {
+		let arr = []
+		let current = this.head
+		while (current) {
+			arr.push(current.val)
+			current = current.next
+		}
+		return arr
+	}
 }
 
 //base list
 let list = new SinglyLinkedList()
-
-//push for .next
