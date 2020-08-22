@@ -51,7 +51,9 @@ class SinglyLinkedList {
 		// set the tail to be the 2nd to last node
 		// decrement length of the list by 1
 		//return valuie of the node removed
-		if (!this.head) return undefined
+		if (!this.head) {
+			return undefined
+		}
 		let current = this.head
 		let newTail = current
 
@@ -68,6 +70,21 @@ class SinglyLinkedList {
 			this.tail = null
 		}
 		return current
+	}
+
+	shift() {
+		// no nodes return undefined
+		//store current ehad property in a vafriable
+		// set head property to be the current heads next property
+		// decrement the length
+		//return the value of the node removed
+		if (this.length === 0) {
+			return undefined
+		}
+		let shiftedHead = this.head
+		this.head = shiftedHead.next
+		this.length--
+		return currentHead
 	}
 }
 
