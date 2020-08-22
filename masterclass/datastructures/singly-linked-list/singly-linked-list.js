@@ -109,6 +109,7 @@ class SinglyLinkedList {
 		this.length++
 		return this
 	}
+
 	get(index) {
 		//get index
 		//if index <= zero || >= length return null
@@ -122,6 +123,7 @@ class SinglyLinkedList {
 		}
 		return current
 	}
+
 	set(index, val) {
 		//change indexed value
 		//accepts index and val
@@ -135,6 +137,7 @@ class SinglyLinkedList {
 		}
 		return false
 	}
+
 	insert(index, val) {
 		// insert at a specific position
 		// index < 0 || index > length return false
@@ -161,6 +164,7 @@ class SinglyLinkedList {
 			return true
 		}
 	}
+
 	remove(index) {
 		// removing node from linkedlist at a specific position
 		// index < zero || > length return undefined
@@ -180,6 +184,7 @@ class SinglyLinkedList {
 			return removed
 		}
 	}
+
 	reverse() {
 		//swap head and tail
 		//create variable called next
@@ -202,7 +207,7 @@ class SinglyLinkedList {
 		}
 		return this
 	}
-	//print all values in arr;
+
 	print() {
 		let arr = []
 		let current = this.head
