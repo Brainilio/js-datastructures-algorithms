@@ -123,8 +123,26 @@ class SinglyLinkedList {
 		}
 		return current
 	}
-	set() {}
-	insert() {}
+	set(index, val) {
+		//change indexed value
+		//accepts index and val
+		//use get method to find specific node
+		//if node is not found, return false
+		//if node is found, set teh value of that node to be the value passed to the function and return true
+		let nodeToBeChanged = this.get(index)
+		if (nodeToBeChanged) {
+			nodeToBeChanged.val = val
+			return true
+		}
+		return false
+	}
+	insert(index, val) {
+		// insert at a specific position
+		// index < 0 || index > length return false
+		// if(index === length) insert at end (push(val))
+		// if(index === 0) unshift(val)
+		// find get(index - 1)
+	}
 	remove() {}
 	reverse() {}
 }
