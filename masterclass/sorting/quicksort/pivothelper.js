@@ -48,7 +48,7 @@ function swap(arr, index1, index2) {
 	return arr
 }
 
-const pivotHelper = (array, start = 0, end = array.length + 1) => {
+const pivotHelper = (array, start = 0, end = array.length - 1) => {
 	let pivot = array[start]
 	let pivotIndex = array.indexOf(pivot)
 	for (let i = pivotIndex + 1; i < array.length; i++) {
