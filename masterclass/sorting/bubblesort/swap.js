@@ -13,4 +13,6 @@ function swap(arr, index1, index2) {
 
 	//and arr[1] is now [0] so [2, 1, 3, 4, 5]
 	arr[index2] = temp
+
+	return arr
 }
