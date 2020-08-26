@@ -168,6 +168,31 @@ class DoublyLinkedlist {
 		}
 		return false
 	}
+
+	//adding a node in a dll by a certain position
+	insert(index, val) {
+		// index < 0 || >= this.length return false;
+		//if index == 0  use unshift(val)
+		// if index == length push(val) ;
+		// use get method to access index - 1;
+		//set next and prev prop on correct nodes to link together
+		//increment length
+		//return true;
+		if (index < 0 || index >= this.length) return false
+		if (index === 0) return this.unshift(val)
+		if (index === this.length) return this.push(val)
+		else {
+			let newNode = new Node(val)
+			let previousNode = this.get(index - 1)
+			let afterNode = previousNode.next
+			previousNode.next = newNode
+			newNode.prev = previousNode
+			newNode.next = afterNode
+			afterNode.prev = newNode
+		}
+		this.length++
+		return true
+	}
 }
 
 let list = new DoublyLinkedlist()
