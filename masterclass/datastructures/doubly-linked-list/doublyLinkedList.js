@@ -179,12 +179,13 @@ class DoublyLinkedlist {
 		//increment length
 		//return true;
 		if (index < 0 || index >= this.length) return false
-		if (index === 0) return this.unshift(val)
-		if (index === this.length) return this.push(val)
+		if (index === 0) return !!this.unshift(val)
+		if (index === this.length) return !!this.push(val)
 		else {
 			let newNode = new Node(val)
 			let previousNode = this.get(index - 1)
 			let afterNode = previousNode.next
+
 			previousNode.next = newNode
 			newNode.prev = previousNode
 			newNode.next = afterNode
@@ -192,6 +193,33 @@ class DoublyLinkedlist {
 		}
 		this.length++
 		return true
+	}
+
+	//remove node by a certain position
+	remove(index) {
+		// index < 0 || >= this.length return undefined
+		// index == 0, shift
+		// index === length-1 pop
+		// use get method to retrieve item to be removed
+		// update next and prev properties to remove the found node from t he list
+		// set next and prev to null ont ehf ound node;
+		// decrement length;
+		if (index < 0 || index >= this.length) return undefined
+		if (index === 0) return this.shift()
+		if (index === this.length - 1) return this.pop()
+
+		let removedNode = this.get(index)
+		let removedNodePrev = removedNode.prev
+		let removedNodeNext = removedNode.next
+
+		removedNodePrev.next = removedNodeNext
+		removedNodeNext.prev = removedNodePrev
+
+		removedNode.next = null
+		removedNode.prev = null
+
+		this.length--
+		return removedNode
 	}
 }
 
