@@ -26,7 +26,7 @@ class DoublyLinkedlist {
 		this.length = 0
 	}
 
-	//adding a node to the end of the doublylinkedlist
+	//adding a node to the end of the dll
 	push(val) {
 		/* 
                - Create new node witht eh value passed to the function
@@ -49,7 +49,7 @@ class DoublyLinkedlist {
 		return this
 	}
 
-	//Remove a node from the end of the doublylinkedlist
+	//Remove a node from the end of the dll
 	pop() {
 		//!head return undefined
 		//variable currtail = current tail
@@ -74,10 +74,94 @@ class DoublyLinkedlist {
 		this.length--
 		return currentNode
 	}
+
+	//Remove a node from the beginning of the dll
+	shift() {
+		// if length is 0 return undefined
+		// store current head prop in variable
+		// if length is 1 set head null and tail null
+		// update the head to be the next of the old head; this.head = oldhead.next
+		// this.head.prev = null
+		// decrement length --
+		// oldhead.prev = null and return oldhead
+
+		if (this.length === 0) return undefined
+		let oldHead = this.head
+		if (this.length === 1) {
+			this.head = null
+			this.tail = null
+		} else {
+			this.head = oldHead.next
+			this.head.prev = null
+			oldHead.next = null
+		}
+		this.length--
+		return oldHead
+	}
+
+	//Add node to beginning of doubly linked list
+	unshift(val) {
+		//create new node with val passed to hte function
+		//if length is 0 set the head to be the new node & tail to be new node
+		// else set prev property on current head to be the new node
+		// set next property on new node to be the head property
+		// this head is new node
+		//increment length
+
+		let newNode = new Node(val)
+		if (this.length === 0) {
+			this.head = newNode
+			this.tail = newNode
+		} else {
+			this.head.prev = newNode
+			newNode.next = this.head
+			newNode.prev = null
+			this.head = newNode
+		}
+		this.length++
+		return this
+	}
+
+	//Access a node in a DLL by its position
+	get(index) {
+		//if index < 0 || >= this.length return null;
+		// if index <= this.length / 2
+		// loop through list starting from head and loop towards middle, return node once its found
+		// if index > this.length / 2
+		// loop through list starting from tail and loop towards middle
+		// return node once its found.
+
+		let medianVal = this.length / 2
+		if (index < 0 || index >= this.length) return null
+
+		if (index <= medianVal) {
+			console.log("working from start")
+			let beginValue = this.head
+			let startcounter = 0
+			while (startcounter !== index) {
+				beginValue = beginValue.next
+				startcounter++
+			}
+			return beginValue
+		} else {
+			console.log("working from end")
+			let lastValue = this.tail
+			let lastCounter = this.length - 1
+
+			while (lastCounter !== index) {
+				lastValue = lastValue.prev
+				lastCounter--
+			}
+			return lastValue
+		}
+	}
 }
 
 let list = new DoublyLinkedlist()
 list.push(99)
 list.push(28)
 list.push("next item")
-console.log(list)
+list.push(33)
+list.push(44)
+list.push(85)
+console.log(list.get(3))
