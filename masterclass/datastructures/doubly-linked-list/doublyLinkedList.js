@@ -155,6 +155,19 @@ class DoublyLinkedlist {
 			return lastValue
 		}
 	}
+
+	//replace value of a node to the index in a dll
+	set(index, val) {
+		//create a variable which is the result of the get method at teh index passed to the function
+		// if get returns node, set value of that node to be the value passed to the function
+		//return true
+		let value = this.get(index)
+		if (value !== null) {
+			value.val = val
+			return true
+		}
+		return false
+	}
 }
 
 let list = new DoublyLinkedlist()
@@ -164,4 +177,4 @@ list.push("next item")
 list.push(33)
 list.push(44)
 list.push(85)
-console.log(list.get(3))
+console.log(list)
