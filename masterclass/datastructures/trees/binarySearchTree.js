@@ -163,6 +163,22 @@ class BinarySearchTree {
 		traverse(current)
 		return visitedNodes
 	}
+	DFSInOrder() {
+		let visitedNodes = []
+		let current = this.root
+		function traverse(node) {
+			if (node.left) {
+				traverse(node.left)
+			}
+			visitedNodes.push(node.value)
+			if (node.right) {
+				traverse(node.right)
+			}
+			visitedNodes.push(node.value)
+		}
+		traverse(current)
+		return visitedNodes
+	}
 }
 
 let tree = new BinarySearchTree()
