@@ -79,7 +79,90 @@ class BinarySearchTree {
 		}
 		return found
 	}
+	bfs() {
+		// *** iteratively *** ///
+		/* 
+		- Create a queue (can be an array)
+		and a variable to store the values of nodes visited
+		- Place the root node in the queue 
+		- Loop as long ast ehre is anything in the queue 
+		- Dequeue a node from the queue and push the value of the node into 
+		the variable that stores the nodes 
+		- If there is a left property on the node dequeued - add it to the queue 
+		- If there is a right property on the node dequeued add it to the queue
+		*/
+		let queue = []
+		let visitedNodes = []
+		let node = this.root
+
+		queue.push(node)
+
+		while (queue.length) {
+			//first element
+			node = queue.shift()
+			visitedNodes.push(node)
+			if (node.left) queue.push(node.left)
+			if (node.right) queue.push(node.right)
+		}
+
+		return visitedNodes
+	}
+	DFSPreOrder() {
+		// steps - recursively
+		/* 
+			- create a variable to store the values of nodes visited 
+			- store the root of the bst in a variable called current 
+			- write a helper function which accepts a node 
+			- push the value of the node to the variable that stores the values
+			- if the node has a left property, call the helper function with the left 
+			left property of the node 
+			- if the node has a right property, call the helper function with the right property
+			on the node 
+			- invoke the helper function with teh current variable
+			- return the arrays of values 
+		*/
+		let visitedNodes = []
+		let current = this.root
+		function traverse(node) {
+			visitedNodes.push(node.value)
+			if (node.left) {
+				traverse(node.left)
+			}
+			if (node.right) {
+				traverse(node.right)
+			}
+		}
+		traverse(current)
+		return visitedNodes
+	}
+	DFSPostOrder() {
+		// recursively //
+		/* 
+			- create a variable to store teh values of nodes visited; 
+			- store the root of the bst in a variable called current 
+			- write a helper function which accepts a node 
+				- if the node has a left proeprty call the helper function with 
+				the left property on the node 
+				- if the node has a right property call the helper function with 
+				the right property on teh node 
+				- push the values of the node to the variable that stores the
+				values
+				- invoke the helper function with teh current variable
+		*/
+		let visitedNodes = []
+		let current = this.root
+		function traverse(node) {
+			if (node.left) {
+				traverse(node.left)
+			}
+			if (node.right) {
+				traverse(node.right)
+			}
+			visitedNodes.push(node.value)
+		}
+		traverse(current)
+		return visitedNodes
+	}
 }
 
 let tree = new BinarySearchTree()
-tree.root = new Node(10)
