@@ -10,6 +10,7 @@ class BinarySearchTree {
 	constructor() {
 		this.root = null
 	}
+
 	insert(value) {
 		/* 
                - create new node 
@@ -52,6 +53,7 @@ class BinarySearchTree {
 			}
 		}
 	}
+
 	contains(value) {
 		/* 
           - Start at Root
@@ -79,6 +81,7 @@ class BinarySearchTree {
 		}
 		return found
 	}
+
 	bfs() {
 		// *** iteratively *** ///
 		/* 
@@ -107,6 +110,7 @@ class BinarySearchTree {
 
 		return visitedNodes
 	}
+
 	DFSPreOrder() {
 		// steps - recursively
 		/* 
@@ -135,6 +139,7 @@ class BinarySearchTree {
 		traverse(current)
 		return visitedNodes
 	}
+
 	DFSPostOrder() {
 		// recursively //
 		/* 
@@ -163,6 +168,7 @@ class BinarySearchTree {
 		traverse(current)
 		return visitedNodes
 	}
+
 	DFSInOrder() {
 		let visitedNodes = []
 		let current = this.root
