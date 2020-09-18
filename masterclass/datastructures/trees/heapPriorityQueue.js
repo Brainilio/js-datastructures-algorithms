@@ -28,7 +28,7 @@ class PriorityQueue {
 		while (index > 0) {
 			let parentIndex = Math.floor((index - 1) / 2)
 			let parent = this.values[parentIndex]
-			if (element.priority <= parent.priority) break
+			if (element.priority >= parent.priority) break
 			this.values[index] = parent
 			this.values[parentIndex] = element
 			index = parentIndex
