@@ -41,6 +41,7 @@ function fib(n, memo = []) {
 // usually done using iteration: better space complexity can be achieved using tabulation
 // calculate a new number with the two numbers that came before it using the array.
 // because of recursion in the memoized version, it can lead to stack overflow.
+// time: o(n) space: is better in tabulation
 function fib(n) {
 	if (n <= 2) return 1
 	var fibNums = [0, 1, 1]
